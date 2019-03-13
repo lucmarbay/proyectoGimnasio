@@ -26,7 +26,7 @@ and open the template in the editor.
              */
             include_once 'conexion.php';
             $sqlUsuarios_pass='CREATE TABLE IF NOT EXISTS usuarios_pass (email VARCHAR(40) PRIMARY KEY NOT NULL, password VARCHAR(254));';
-            $sqlEntrenamiento='CREATE TABLE IF NOT EXISTS entrenamiento (id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, nombre VARCHAR(40) NOT NULL, emailUsuario VARCHAR(40) NOT NULL, dia INT(2) NOT NULL, series INT(2), repeticiones INT(2), imagen VARCHAR(40), CONSTRAINT fk_emaildUsuario FOREIGN KEY (emailUsuario) REFERENCES usuarios_pass(email));';
+            $sqlEntrenamiento='CREATE TABLE IF NOT EXISTS entrenamiento (id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, nombre VARCHAR(40) NOT NULL, emailUsuario VARCHAR(40) NOT NULL, dia VARCHAR(40), series VARCHAR(40), repeticiones VARCHAR(40), imagen VARCHAR(40), CONSTRAINT fk_emaildUsuario FOREIGN KEY (emailUsuario) REFERENCES usuarios_pass(email));';
             $resultado=$base->prepare($sqlUsuarios_pass);			
             $resultado->execute();
             $resultado=$base->prepare($sqlEntrenamiento);			

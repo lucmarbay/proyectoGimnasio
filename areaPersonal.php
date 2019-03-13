@@ -27,17 +27,19 @@ and open the template in the editor.
         <?php
         try {
             include_once 'conexion.php';
-            $sql="SELECT * entrenamiento WHERE email= :email";
+            /**$sql="SELECT * entrenamiento WHERE email= :email";
             $resultado=$base->prepare($sql);			
-            $resultado->execute(array(":email"=>$usuario));	
+            $resultado->execute(array(":email"=>$usuario));
+            var_dump($resultado);
             while($registro=$resultado->fetch(PDO::FETCH_ASSOC)){	
                 $entrenamientoNombre=$registro['nombre'];
                 echo '<a href="entrenamiento.php?entrenamiento='.$entrenamientoNombre.'">'.$entrenamientoNombre.'</a>';
-            }
+            }**/
         } catch (Exception $ex) {
             die('Error' . $ex->getMessage());
             echo '<br>Línea del error: '.$ex->getLine();
         }
         ?>
+        <a href="addEntrenamiento.php"><button>Añadir entrenamiento</button></a>
     </body>
 </html>
