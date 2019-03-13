@@ -27,7 +27,7 @@ and open the template in the editor.
         ?>
         <h1>Añadir entrenamiento</h1>
         <form action="addEntrenamiento.php" method="POST">
-            <input type="text" name="nombre" required="required" placeholder="Nombre del entrenamiento"><br>
+            <input type="text" name="nombreEntrenamiento" required="required" placeholder="Nombre del entrenamiento"><br>
             <input type="email" name="email" required="required" hidden="hidden" value="<?php echo $usuario ?>">
             <input type="text" name="dia" placeholder="Día del entrenamiento"><br>
             <input type="text" name="series" placeholder="Número de series"><br>
